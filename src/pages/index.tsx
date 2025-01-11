@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import { useEffect } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,6 +15,16 @@ const geistMono = Geist_Mono({
 });
 
 export default function Home() {
+  const callThisFromConsole = () => {
+    alert(
+      "This is pure genius at work I guess, I have no idea how he did this"
+    );
+  };
+  useEffect(() => {
+    // @ts-ignore
+    window.callThisFromConsole = callThisFromConsole;
+  }, []);
+
   return (
     <>
       <Head>
