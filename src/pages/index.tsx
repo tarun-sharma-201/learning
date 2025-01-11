@@ -21,7 +21,7 @@ export default function Home() {
     );
   };
   useEffect(() => {
-    // @ts-ignore
+    // @ts-expect-error: Should add function to global
     window.callThisFromConsole = callThisFromConsole;
   }, []);
 
